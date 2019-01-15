@@ -10,3 +10,11 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+puts "Give me a store name!"
+name = $stdin.gets.chomp
+
+newstore = Store.create(name: name)
+
+if !newstore.valid?
+  puts newstore.errors.messages
+end
